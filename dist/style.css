@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+}
+#inputForm{
+    margin: 2em auto;
+    width: 25%;
+}
+
+.duty{
+    background-color: #007bff;
+    color: #fff;
+    width: 20%;
+    height: 3em;
+    margin-left: 45.5em;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    vertical-align: middle;
+    line-height: 45px;
+}
+.i{
+    height: 3em;
+}

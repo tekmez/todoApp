@@ -1,15 +1,24 @@
-import createDuty from "./duty";
+import createDuty from "./createDuty";
+import { getTodo, newTodo, editTodo, deleteTodo} from "./api";
 const addBtn = document.getElementById('btnAdd');
 addBtn.addEventListener('click', addDuty);
 function addDuty(e){
     e.preventDefault();
     createDuty();
-}
+    newTodo()
+};
 
-async function todo(){
-    const response = await fetch('https://61c37c2b9cfb8f0017a3ebbc.mockapi.io/todos/', {mode: "cors"});
-    const todoData = await response.json();
-    console.log(todoData);
-}
-todo();
+    // getTodo();
+    // editTodo();
+    // deleteTodo();
 
+// firstDiv.addEventListener('click',checkDeleteOrEdit)
+// function checkDeleteOrEdit (event){
+//     if(event.target.id === 'remove')
+//         removeDuty(event);
+//     if(event.target.id === 'edit')
+//         editDuty(event);
+// };
+// const removeDuty = () => {
+//     document.body.removeChild(firstDiv);
+// }

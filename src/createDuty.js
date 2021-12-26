@@ -1,4 +1,5 @@
 const createDuty = () => {
+    const addİnput = document.getElementById('inputAdd');
     // Create elements
     const firstDiv = document.createElement('div');
     const text = document.createElement('p');
@@ -22,5 +23,7 @@ const createDuty = () => {
     // Add icons
     firstBtn.innerHTML = '<i class="far fa-trash-alt"></i>';
     secondBtn.innerHTML = '<i class="fas fa-edit"></i>';
+    // add duty
+    text.innerHTML = addİnput.value;
 };
 export default createDuty;

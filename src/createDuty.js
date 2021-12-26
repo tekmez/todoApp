@@ -1,5 +1,4 @@
 const createDuty = () => {
-    const addİnput = document.getElementById('inputAdd');
     // Create elements
     const firstDiv = document.createElement('div');
     const text = document.createElement('p');
@@ -11,7 +10,7 @@ const createDuty = () => {
     text.classList.add('duty');
     secondDiv.classList.add('input-group-append');
     firstBtn.classList.add('i', 'btn', 'btn-primary');
-    firstBtn.setAttribute('id', 'remove');
+    firstBtn.setAttribute('id', 'delete');
     secondBtn.classList.add('i', 'btn', 'btn-primary');
     secondBtn.setAttribute('id', 'edit');
     // Append Child
@@ -23,7 +22,5 @@ const createDuty = () => {
     // Add icons
     firstBtn.innerHTML = '<i class="far fa-trash-alt"></i>';
     secondBtn.innerHTML = '<i class="fas fa-edit"></i>';
-    // add duty
-    text.innerHTML = addİnput.value;
 };
 export default createDuty;

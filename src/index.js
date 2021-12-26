@@ -1,24 +1,16 @@
-import createDuty from "./createDuty";
+// import createDuty from "./createDuty";
 import { getTodo, newTodo, editTodo, deleteTodo} from "./api";
-const addBtn = document.getElementById('btnAdd');
-addBtn.addEventListener('click', addDuty);
-function addDuty(e){
+// const addBtn = document.getElementById('btnAdd');
+// addBtn.addEventListener('click', addDuty);
+document.addEventListener('click', btn)
+function btn(e){
     e.preventDefault();
-    createDuty();
-    newTodo()
+    if(e.target.id === 'btnAdd')
+        newTodo();
+    else if(e.target.id === 'delete')
+        deleteTodo();
 };
-
-    // getTodo();
+window.onload= getTodo();
+    //newToto();
     // editTodo();
-    // deleteTodo();
-
-// firstDiv.addEventListener('click',checkDeleteOrEdit)
-// function checkDeleteOrEdit (event){
-//     if(event.target.id === 'remove')
-//         removeDuty(event);
-//     if(event.target.id === 'edit')
-//         editDuty(event);
-// };
-// const removeDuty = () => {
-//     document.body.removeChild(firstDiv);
-// }
+    

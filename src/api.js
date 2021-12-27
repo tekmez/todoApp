@@ -7,13 +7,12 @@ const renderPosts = (posts) => {
         <p class="duty">${post.content}</p>
         <div class="input-group-append">
           <button class="i btn btn-primary" data-id=${post.id}><i class="far fa-trash-alt" id="delete"></i></button>
-          <button class="i btn btn-primary"><i class="far fa-edit" id="edit"></i></button>
+          <button class="i btn btn-primary" data-id=${post.id}><i class="far fa-edit" id="edit"></i></button>
         </div>`
     });
     group.innerHTML = output;
 };
 let output= '';
-// let id = e.target.parentElement.dataset.id
 // GET All todos
 async function getTodo(){
     const response = await fetch(url, {
@@ -37,26 +36,28 @@ async function newTodo(){
     renderPosts(dataArr);
 };
 // PUT TODO
-async function editTodo(){
-    const response = await fetch(`${url}/2`, {
+async function editTodo(data){
+    const response = await fetch(`${url}/${data}`, {
         method: 'PUT',
-        body: JSON.stringify({content: 'Hello'}),
+        body: JSON.stringify({content: addİnput.value}),
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
     });
     const editData = await response.json();
-    console.log(editData);
+    location.reload(editData);
 };
 // DELETE TODO
-async function deleteTodo(){
-    const response = await fetch(`${url}/${id}`, {
+
+async function deleteTodo(data){
+    const response = await fetch(`${url}/${data}`, {
         method: 'DELETE',
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
     });
     const deleteData = await response.json();
-    console.log(deleteData);
+    location.reload(deleteData);
 };
+
 export {getTodo, newTodo, editTodo, deleteTodo};
